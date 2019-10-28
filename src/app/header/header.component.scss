@@ -1,11 +1,22 @@
-:host {
+#App-Main-Header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   color: white;
   background-color: #38A716;
   width: 100vw;
   height: 10vh;
   margin-top: 0;
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      background-color: white;
+      color: green;
+      list-style: none;
+      padding: 1em 2em;
+      margin: 0 1em;
+    }
+  }
 }

@@ -1,4 +1,24 @@
+$font-heading: 'Montserrat', sans-serif;
+$font-subheading: 'Raleway', sans-serif;
+$font: 'Roboto Condensed', sans-serif;
+
+h1, h2 {
+  font-family: $font-heading;
+}
+
+h3, h4, h5, h6 {
+  font-family: $font-subheading;
+}
+
+button, p, a, li {
+  font-family: $font;
+}
+
 *{
   margin: 0;
   padding: 0;
+}
+
+li:hover {
+  cursor: pointer;
 }
