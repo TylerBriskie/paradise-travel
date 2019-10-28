@@ -1,15 +1,36 @@
 <h2>Book A Trip</h2>
 <ul id="Trip-Type-Selector" class="row">
   <li *ngFor="let type of tripTypes" class="select-trip-type" (click)="selectTripType(type)" [class.selected]="type === selectedTripType">
-    {{type}}
+    {{type.name}}
   </li>
 </ul>
 
 
 
 <form id="New-Booking-Form">
-  <label for="startDate">Trip Start</label>
-  <input type="startDate" name="" value="02/03/2020">
-  <label for="endDate">Trip End</label>
-  <input type="endDate" name="" value="02/06/2020">
+  <div class="row">
+    <label for="startDate">
+      Trip Start
+      <input [(ngModel)]="currentBooking.startDate" type="startDate" name="startDate">
+    </label>
+
+    <label for="endDate">
+      Trip End
+      <input [(ngModel)]="currentBooking.endDate" type="endDate" name="endDate">
+    </label>
+  </div>
+  <div *ngIf="selectedTripType.flight === true" class="">
+    FLIGHT
+  </div>
+  <div *ngIf="selectedTripType.hotel === true" class="">
+    HOTEL
+  </div>
+  <div *ngIf="selectedTripType.car === true" class="">
+    CAR
+  </div>
+  <div class="button-group">
+    <button type="button" class="good" name="button">BOOK IT</button>
+    <button type="clear" class="clear">Clear</button>
+  </div>
+
 </form>

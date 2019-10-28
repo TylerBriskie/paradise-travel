@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DpDatePickerModule} from 'ng2-date-picker'
+import { TripType } from '../core/models/TripType';
+import { TripTypes } from '../core/mockData/TripTypes';
 
 @Component({
   selector: 'app-booking',
@@ -7,13 +8,11 @@ import {DpDatePickerModule} from 'ng2-date-picker'
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements OnInit {
-  selectedTripType: string;
-  tripTypes = ['Car', 'Hotel', 'Flight', 'Flight + Car', 'Flight + Hotel', 'Hotel + Car', 'Flight + Hotel + Car'];
+  selectedTripType: TripType = TripTypes[0];
+  tripTypes: TripType[] = TripTypes;
   carTypes = ['Economy', 'Luxury', 'SUV', 'Van'];
+  cities = ['Denver', 'Dallas', 'Boston', 'San Francisco', 'Toronto', 'London','New York', 'Los Angeles', 'Tokyo', 'Hamburg', 'Cairo'];
   currentBooking: {
-    car: boolean,
-    flight: boolean,
-    hotel: boolean,
     startDate: string,
     endDate: string,
     origin: string,
@@ -21,15 +20,25 @@ export class BookingComponent implements OnInit {
     adults: number,
     children: number,
     carType: string,
-  }
+  };
 
 
   constructor() { }
 
   ngOnInit() {
+    this.currentBooking = {
+      startDate: "02/03/2020",
+      endDate: "02/06/2020",
+      origin: "Denver",
+      destination: "London",
+      adults: 0,
+      children: 0,
+      carType: 'Economy'
+
+    }
   }
 
-  selectTripType(type: any){
+  selectTripType(type: TripType){
       this.selectedTripType = type;
   }
 

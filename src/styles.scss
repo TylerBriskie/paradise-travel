@@ -10,7 +10,7 @@ h3, h4, h5, h6 {
   font-family: $font-subheading;
 }
 
-button, p, a, li {
+button, p, a, li, label, input {
   font-family: $font;
 }
 
@@ -38,4 +38,30 @@ li:hover {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.button-group {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+button {
+  padding: 1em 3em;
+  outline: none;
+  border: none;
+}
+
+button.good {
+  color: white;
+  background-color: #1577B3;
+}
+
+button.clear {
+  background-color: white;
+  outline: solid #1577B3 2px;
+  color: #1577B3;
 }

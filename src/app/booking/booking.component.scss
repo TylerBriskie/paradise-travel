@@ -3,6 +3,20 @@
   flex-direction: column;
   align-items: center;
 
+  #New-Booking-Form {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
+    width: 60vw;
+    .row {
+      justify-content: space-around;
+    }
+    label {
+      margin-right: 1em;
+    }
+  }
+
   #Trip-Type-Selector {
     .select-trip-type {
       padding: 1.5em 2em;
