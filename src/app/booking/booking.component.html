@@ -1,1 +1,12 @@
-<p>booking works!</p>
+<h2>Book A Trip</h2>
+<ul id="Trip-Type-Selector" class="row">
+  <li *ngFor="let type of tripTypes" class="select-trip-type" (click)="selectTripType(type)" [class.selected]="type === selectedTripType">
+    {{type}}
+  </li>
+</ul>
+
+
+
+<form id="New-Booking-Form">
+
+</form>

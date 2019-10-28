@@ -31,10 +31,10 @@ describe('HeaderComponent', () => {
       expect(compiled.querySelector('#App-Main-Header h1').textContent).toContain('Jenkins Travel');
     });
 
-    it('should have a nav bar', () => {
+    it('should have a nav bar with three links', () => {
       const fixture = TestBed.createComponent(HeaderComponent);
             fixture.detectChanges();
             const compiled = fixture.debugElement.nativeElement;
-            expect(compiled.querySelector('#Main-Nav')).toBeTruthy();
+            expect(compiled.querySelector('#Main-Nav li')).toBe(3);
     });
 });

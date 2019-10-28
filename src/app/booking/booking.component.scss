@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #Trip-Type-Selector {
+    .select-trip-type {
+      padding: 1.5em 2em;
+      margin: 0 1.5em;
+      background-color: #333;
+      color: white;
+    }
+    .select-trip-type.selected {
+      outline: solid #333 2px;
+      color: black;
+      background-color: white;
+    }
+  }
+}
