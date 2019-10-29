@@ -26,8 +26,8 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Jenkins Travel Co.'`, () => {
-    expect(app.title).toEqual('Jenkins Travel Co.');
+  it(`should have as title 'Paradise Travel Co.'`, () => {
+    expect(app.title).toEqual('Paradise Travel Co.');
   });
 
 });

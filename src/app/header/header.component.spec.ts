@@ -28,7 +28,7 @@ describe('HeaderComponent', () => {
       const fixture = TestBed.createComponent(HeaderComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#App-Main-Header h1').textContent).toContain('Jenkins Travel');
+      expect(compiled.querySelector('#App-Main-Header h1').textContent).toContain('Paradise Travel');
     });
 
     it('should have a nav bar with three links', () => {

@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BookingComponent } from './booking/booking.component';
-import { LoginComponent } from './login/login.component';
-import { IteneraryComponent } from './itenerary/itenerary.component';
+import { ItineraryComponent } from './itinerary/itinerary.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { IteneraryComponent } from './itenerary/itenerary.component';
     HeaderComponent,
     HomepageComponent,
     BookingComponent,
-    LoginComponent,
-    IteneraryComponent
+    ItineraryComponent
   ],
   imports: [
     FormsModule,
