@@ -41,7 +41,9 @@ li:hover {
 }
 
 .button-group {
+  min-width: 400px;
   margin-top: 2em;
+  width: inherit;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -44,4 +44,12 @@ describe('BookingComponent', () => {
     component.toggleHotel();
     expect(component.currentBooking.hotel).toBe(true);
   });
+
+  it('should not be able to submit without all three options selected', () => {
+    component.toggleHotel();
+    component.toggleCar();
+    expect(component.canSubmit).toBe(false);
+    component.toggleFlight();
+    expect(component.canSubmit).toBe(true);
+  })
 });

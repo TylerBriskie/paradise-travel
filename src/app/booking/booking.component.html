@@ -1,4 +1,5 @@
-<h2>Book A Trip</h2>
+<h1>Book A Trip</h1>
+<h3>Select Options</h3>
 <ul id="Trip-Type-Selector" class="row">
   <li (click)="toggleCar()" class="select-trip-type" [class.selected]="currentBooking.car === true">
     Car
@@ -14,24 +15,57 @@
 
 
 <form id="New-Booking-Form">
+    <div *ngIf="currentBooking.car === true" class="form-selection-indicator">
+      <img src="../../assets/selected.png" alt="">
+      <p>CAR ADDED</p>
+    </div>
+    <div *ngIf="currentBooking.car === false" class="form-selection-indicator">
+      <img src="../../assets/unselected.png" alt="">
+      <p>
+        CAR NOT ADDED
+      </p>
+      
+    </div>
+    <div *ngIf="currentBooking.hotel === true" class="form-selection-indicator">
+      <img src="../../assets/selected.png" alt="">
+      <p>HOTEL ADDED</p>
+      
+    </div>
+    <div *ngIf="currentBooking.hotel === false" class="form-selection-indicator">
+      <img src="../../assets/unselected.png" alt="">
+      <p>
+        HOTEL NOT ADDED
+      </p>
+      
+    </div>
 
-  <div *ngIf="currentBooking.flight === true" class="">
-    <p>
-      FLIGHT
-    </p>
-    
-  </div>
-  <div *ngIf="currentBooking.hotel === true" class="">
-    
-    <p>HOTEL</p>
-    
-  </div>
-  <div *ngIf="currentBooking.car === true" class="">
-    <p>CAR</p>
-  </div>
-  <div class="button-group">
-    <button type="button" class="good" name="button">BOOK IT</button>
-    <button type="clear" class="clear">Clear</button>
-  </div>
+
+    <div *ngIf="currentBooking.flight === true" class="form-selection-indicator">
+        <img src="../../assets/selected.png" alt="">
+
+      <p>FLIGHT ADDED</p>
+      
+    </div>
+    <div *ngIf="currentBooking.flight === false" class="form-selection-indicator">
+      <img src="../../assets/unselected.png" alt="">
+      <p>
+        FLIGHT NOT ADDED
+      </p>
+      
+    </div>
+
+
+
+
+
+
 
 </form>
+
+<div class="button-group">
+  <button type="button" class="good" name="button" 
+    [ngClass]="{'disabled': canSubmit === false}"
+    (click)="submitBooking()"
+    [disabled]="canSubmit === false">BOOK IT</button>
+  <button type="clear" class="clear">Clear</button>
+</div>

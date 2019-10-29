@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TripType } from '../core/models/TripType';
-import { TripTypes } from '../core/mockData/TripTypes';
+import '../../assets/selected.png';
+
 
 @Component({
   selector: 'app-booking',
@@ -8,6 +8,7 @@ import { TripTypes } from '../core/mockData/TripTypes';
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements OnInit {
+  canSubmit: boolean = false;
   currentBooking: {
     car: boolean,
     flight: boolean,
@@ -25,14 +26,28 @@ export class BookingComponent implements OnInit {
 
   toggleCar(){
       this.currentBooking.car = !this.currentBooking.car;
+      this.checkEnableSubmit();
   }
 
   toggleFlight(){
     this.currentBooking.flight = !this.currentBooking.flight;
-
+    this.checkEnableSubmit();
   }
 
   toggleHotel() {
     this.currentBooking.hotel = !this.currentBooking.hotel;
+    this.checkEnableSubmit();
+  }
+
+  checkEnableSubmit() {
+    if (this.currentBooking.car === true && this.currentBooking.flight === true && this.currentBooking.hotel === true){
+      this.canSubmit = true;
+    } else {
+      this.canSubmit = false;
+    }
+  }
+
+  submitBooking(){
+    console.log('booking!')
   }
 }
