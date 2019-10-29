@@ -1,32 +1,33 @@
 <h2>Book A Trip</h2>
 <ul id="Trip-Type-Selector" class="row">
-  <li *ngFor="let type of tripTypes" class="select-trip-type" (click)="selectTripType(type)" [class.selected]="type === selectedTripType">
-    {{type.name}}
+  <li (click)="toggleCar()" class="select-trip-type" [class.selected]="currentBooking.car === true">
+    Car
+  </li>
+  <li (click)="toggleHotel()" class="select-trip-type" [class.selected]="currentBooking.hotel === true">
+    Hotel
+  </li>
+  <li (click)="toggleFlight()" class="select-trip-type" [class.selected]="currentBooking.flight === true">
+    Flight
   </li>
 </ul>
 
 
 
 <form id="New-Booking-Form">
-  <div class="row">
-    <label for="startDate">
-      Trip Start
-      <input [(ngModel)]="currentBooking.startDate" type="startDate" name="startDate">
-    </label>
 
-    <label for="endDate">
-      Trip End
-      <input [(ngModel)]="currentBooking.endDate" type="endDate" name="endDate">
-    </label>
+  <div *ngIf="currentBooking.flight === true" class="">
+    <p>
+      FLIGHT
+    </p>
+    
   </div>
-  <div *ngIf="selectedTripType.flight === true" class="">
-    FLIGHT
+  <div *ngIf="currentBooking.hotel === true" class="">
+    
+    <p>HOTEL</p>
+    
   </div>
-  <div *ngIf="selectedTripType.hotel === true" class="">
-    HOTEL
-  </div>
-  <div *ngIf="selectedTripType.car === true" class="">
-    CAR
+  <div *ngIf="currentBooking.car === true" class="">
+    <p>CAR</p>
   </div>
   <div class="button-group">
     <button type="button" class="good" name="button">BOOK IT</button>
