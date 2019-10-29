@@ -1,1 +1,40 @@
-<p>itinerary works!</p>
+<div id="Itinerary-Component">
+    <h1>My Trips</h1>
+    <div id="Select-Reservation-Type">
+        <ul class="row">
+            <li class="select-trip-type">
+                Complete Trip
+            </li>
+            <li  class="select-trip-type">
+                Car
+            </li>
+            <li class="select-trip-type">
+                Hotel
+            </li>
+            <li class="select-trip-type">
+                Flight
+            </li>
+        </ul>
+    </div>
+
+    <div *ngFor="let trip of trips" class="trip-list-item">
+        <div *ngIf="trip.confirmed" class="success-box">
+            <img src="" alt="">
+        </div>
+        <div *ngIf="!trip.confirmed" class="failure-box">
+            <img src="" alt="">
+        </div>
+        <div></div>
+        <div class="trip-details">
+            <h4>Trip No: <span class="trip-id">{{trip.id}}</span></h4>
+            <h4>Confirmed: 
+                <span *ngIf="trip.confirmed" class="trip-confirmation success">
+                    YES
+                </span>
+                <span *ngIf="!trip.confirmed" class="trip-confirmation failure">
+                    NO
+                </span>
+            </h4>
+        </div>
+
+</div>

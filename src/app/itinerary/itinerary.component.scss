@@ -1,0 +1,52 @@
+#Itinerary-Component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1, h3 {
+        margin-bottom: 2em;
+      }
+
+    #Select-Reservation-Type{
+        .select-trip-type {
+            padding: 1.5em 2em;
+            margin: 0 1.5em;
+            outline: solid #333 2px;
+            color: black;
+            background-color: white;
+          }
+          .select-trip-type.selected {
+            background-color: #333;
+            color: white;
+          }
+    }
+    .trip-list-item{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+        height: 4em;
+        padding: 1.5em;
+        outline: solid grey 2px;
+        margin-top: 2em;
+        .trip-details {
+            margin-left: 2em;
+            display: flex;
+            flex-direction: column;
+            h4 {
+                margin-bottom: .75em;
+            }
+        }
+        
+        .success-box {
+            width:2em;
+            height: 100%;
+            background-color: #00B333;
+        }
+        .failure-box {
+            width: 2em;
+            height: 100%;
+            background-color: #B33300;
+        }
+
+    }
+}

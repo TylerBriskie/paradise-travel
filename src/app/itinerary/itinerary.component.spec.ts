@@ -4,7 +4,7 @@ import { ItineraryComponent } from './itinerary.component';
 
 describe('ItineraryComponent', () => {
   let component: ItineraryComponent;
-  let fixture: ComponentFixture<ItineraryComponent
+  let fixture: ComponentFixture<ItineraryComponent>;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ItineraryComponent ]

@@ -28,13 +28,6 @@ describe('HeaderComponent', () => {
       const fixture = TestBed.createComponent(HeaderComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#App-Main-Header h1').textContent).toContain('Paradise Travel');
-    });
-
-    it('should have a nav bar with three links', () => {
-      const fixture = TestBed.createComponent(HeaderComponent);
-            fixture.detectChanges();
-            const compiled = fixture.debugElement.nativeElement;
-            expect(compiled.querySelector('#Main-Nav li')).toBe(3);
+      expect(compiled.querySelector('#Header-Component h1').textContent).toContain('Paradise Travel');
     });
 });
