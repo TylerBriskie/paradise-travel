@@ -4,7 +4,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BookingComponent } from './booking/booking.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'book', component: BookingComponent },
   { path: 'itinerary', component: ItineraryComponent}

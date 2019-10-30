@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import '../../assets/selected.png';
+import { MessagingService } from '../core/services/messaging.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class BookingComponent implements OnInit {
     hotel: false
   };
 
-  constructor() { }
+  constructor(private messagingService: MessagingService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -48,6 +50,7 @@ export class BookingComponent implements OnInit {
   }
 
   submitBooking(){
-    console.log('booking!')
+    this.messagingService.add({status: 'OK', text: 'Your trip was booked'});
+    this.router.navigate(['/itinerary']);
   }
 }
