@@ -3,6 +3,8 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { TripConfirmations } from '../mockData/TripConfirmations';
 import { TripConfirmation } from '../models/TripConfirmation';
 import { Observable } from 'rxjs';
+import { ItineraryDetail } from '../models/ItineraryDetail';
+import { MockItineraryDetails } from '../mockData/ItineraryDetails';
 
 
 @Injectable({
@@ -30,5 +32,11 @@ export class TripService {
     })
   }
 
+  getTripDetail(id: string): Observable<ItineraryDetail> {
+    return Observable.create( observer => {
+      observer.next(MockItineraryDetails);
+      observer.complete();
+    })
+  }
   
 }

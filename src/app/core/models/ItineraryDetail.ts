@@ -1,4 +1,4 @@
-export class ItineraryDetails {
+export class ItineraryDetail {
     id: string;
     flightId: string;
     carId: string;
