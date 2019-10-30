@@ -18,6 +18,7 @@
         h5 {
             width: 50%;
         }
+
     }
     .OK {
         color: white;
@@ -27,5 +28,23 @@
         color: white;
         background-color: #F33D00;
     }
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
     
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
 }

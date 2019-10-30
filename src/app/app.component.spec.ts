@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { MessagesComponent } from './core/shared/messages/messages.component';
 
 describe('AppComponent', () => {
   let fixture;
@@ -14,7 +15,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        MessagesComponent,
       ],
     }).compileComponents();
         fixture = TestBed.createComponent(AppComponent);
