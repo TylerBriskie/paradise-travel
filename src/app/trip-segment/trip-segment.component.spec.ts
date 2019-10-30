@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ItineraryComponent } from './itinerary.component';
+import { TripSegmentComponent } from './trip-segment.component';
+import { RouterTestingModule } from '@angular/router/testing';
 import { routes } from '../app-routing.module';
 import { BookingComponent } from '../booking/booking.component';
-import { TripSegmentComponent } from '../trip-segment/trip-segment.component';
-import { ItineraryDetailComponent } from './itinerary-detail/itinerary-detail.component';
 import { HomepageComponent } from '../homepage/homepage.component';
+import { ItineraryComponent } from '../itinerary/itinerary.component';
+import { ItineraryDetailComponent } from '../itinerary/itinerary-detail/itinerary-detail.component';
 
 
-describe('ItineraryComponent', () => {
-  let component: ItineraryComponent;
-  let fixture: ComponentFixture<ItineraryComponent>;
+describe('TripSegmentComponent', () => {
+  let component: TripSegmentComponent;
+  let fixture: ComponentFixture<TripSegmentComponent>;
   let router: Router;
-  let location: Location
+  let location: Location;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,7 +26,7 @@ describe('ItineraryComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItineraryComponent);
+    fixture = TestBed.createComponent(TripSegmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
