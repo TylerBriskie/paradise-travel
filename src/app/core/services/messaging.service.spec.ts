@@ -21,7 +21,6 @@ describe('MessagingService', () => {
 
   beforeEach(() => {
     service = TestBed.get(MessagingService);
-
   });
 
   it('should be created', () => {

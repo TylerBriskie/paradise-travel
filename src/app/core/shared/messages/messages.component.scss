@@ -1,0 +1,31 @@
+#Messages-Container {
+    .messages-list {
+        width: 30vw;
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 10px;
+        left: 35vw;
+    }
+    .single-message {
+        width: 30vw;
+        justify-content: space-between;
+        align-items: center;
+        outline: solid darkgrey 2px;
+        margin-bottom: 5px;
+        padding-left: 12px;
+        h5 {
+            width: 50%;
+        }
+    }
+    .OK {
+        color: white;
+        background-color: #00B33D;
+    }
+    .Warning {
+        color: white;
+        background-color: #F33D00;
+    }
+    
+}
