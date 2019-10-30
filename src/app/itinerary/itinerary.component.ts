@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TripConfirmation } from '../core/models/TripConfirmation';
-import { TripConfirmations } from '../core/mockData/TripConfirmations';
+
+import { TripService } from '../core/services/trip.service';
 
 @Component({
   selector: 'app-itinerary',
@@ -10,10 +11,13 @@ import { TripConfirmations } from '../core/mockData/TripConfirmations';
 export class ItineraryComponent implements OnInit {
   //todo: replace this with service implementation
 
-  trips: TripConfirmation[] = TripConfirmations;
-  constructor() { }
+  trips: TripConfirmation[] = [];
+  constructor(private tripService: TripService) { }
 
   ngOnInit() {
+    this.tripService.getTrips().subscribe((trips) =>{
+      this.trips = trips;
+    })
   }
 
 }

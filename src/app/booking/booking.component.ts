@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import '../../assets/selected.png';
 import { MessagingService } from '../core/services/messaging.service';
 import { Router } from '@angular/router';
+import { TripService } from '../core/services/trip.service';
 
 
 @Component({
@@ -21,7 +22,10 @@ export class BookingComponent implements OnInit {
     hotel: false
   };
 
-  constructor(private messagingService: MessagingService, private router: Router) { }
+  constructor(
+    private messagingService: MessagingService, 
+    private tripService: TripService,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -50,7 +54,13 @@ export class BookingComponent implements OnInit {
   }
 
   submitBooking(){
-    this.messagingService.add({status: 'OK', text: 'Your trip was booked'});
-    this.router.navigate(['/itinerary']);
+    this.tripService.newTrip(this.currentBooking).subscribe((newTrip) => {
+      this.messagingService.add({status: 'OK', text: 'Your trip was booked'});
+      this.router.navigate([`/itinerary/${newTrip.id}`]);
+
+    }, (error) =>{
+      this.messagingService.add({status: 'Warning', text: 'There was an error booking your trip.'})
+    });
+    
   }
 }

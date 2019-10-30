@@ -72,7 +72,7 @@ describe('BookingComponent', () => {
     component.toggleHotel();
     component.toggleCar();
     component.submitBooking();
-    tick();
+    tick(500);
     expect(location.path()).toContain('/itinerary/');
   }));
 });

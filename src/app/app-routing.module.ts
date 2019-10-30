@@ -7,7 +7,8 @@ import { ItineraryComponent } from './itinerary/itinerary.component';
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'book', component: BookingComponent },
-  { path: 'itinerary', component: ItineraryComponent}
+  { path: 'itinerary', component: ItineraryComponent},
+  { path: 'itinerary/:id', component: ItineraryComponent }
 ];
 
 @NgModule({
