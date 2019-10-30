@@ -14,7 +14,7 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
   }
 
-  clear(id, message: Message){
+  clear(id: string, message: Message){
     console.log('message: ', message);
     const node = document.getElementById(id);
     node.classList.add('animated', 'fadeOutRightBig')
