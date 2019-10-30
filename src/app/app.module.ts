@@ -10,6 +10,7 @@ import { BookingComponent } from './booking/booking.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { MessagesComponent } from './core/shared/messages/messages.component';
 import { TripSegmentComponent } from './trip-segment/trip-segment.component';
+import { ItineraryDetailComponent } from './itinerary/itinerary-detail/itinerary-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TripSegmentComponent } from './trip-segment/trip-segment.component';
     BookingComponent,
     ItineraryComponent,
     MessagesComponent,
-    TripSegmentComponent
+    TripSegmentComponent,
+    ItineraryDetailComponent
   ],
   imports: [
     FormsModule,
