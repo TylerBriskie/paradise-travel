@@ -17,7 +17,7 @@
         </ul>
     </div>
 
-    <div *ngFor="let trip of trips" class="trip-list-item">
+    <div *ngFor="let trip of trips" class="trip-list-item" routerLink="/itinerary/{{trip.id}}">
         <div *ngIf="trip.confirmed" class="success-box">
             <img src="" alt="">
         </div>

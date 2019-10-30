@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BookingComponent } from './booking/booking.component';
 import { ItineraryComponent } from './itinerary/itinerary.component';
 import { MessagesComponent } from './core/shared/messages/messages.component';
+import { TripSegmentComponent } from './trip-segment/trip-segment.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MessagesComponent } from './core/shared/messages/messages.component';
     HomepageComponent,
     BookingComponent,
     ItineraryComponent,
-    MessagesComponent
+    MessagesComponent,
+    TripSegmentComponent
   ],
   imports: [
     FormsModule,
