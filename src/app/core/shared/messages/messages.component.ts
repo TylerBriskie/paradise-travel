@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagingService } from '../../services/messaging.service';
+import { Message } from '../../models/Message';
 
 @Component({
   selector: 'app-messages',
@@ -13,4 +14,13 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
   }
 
+  clear(id, message: Message){
+    console.log('message: ', message);
+    const node = document.getElementById(id);
+    node.classList.add('animated', 'fadeOutRightBig')
+    setTimeout(() => {
+      this.messagingService.clear(message);
+
+    }, 300)
+  }
 }

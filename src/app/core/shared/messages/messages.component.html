@@ -1,8 +1,12 @@
 <div id="Messages-Container" *ngIf="messagingService.messages.length">
     <div class="messages-list">
-      <div class="single-message row" [ngClass]="{'OK': message.status === 'OK', 'Warning': message.status === 'Warning'}"*ngFor='let message of messagingService.messages'>
-        <h5 >{{message.text}}</h5>
-        <button class="cancel-button" (click)="messagingService.clear(message)"> OK </button>
+      <div 
+            class="single-message row" 
+            [ngClass]="{'OK': message.status === 'OK', 'Warning': message.status === 'Warning'}"
+            *ngFor='let message of messagingService.messages; let i = index'
+            id="{{i}}">
+        <h5>{{message.text}}</h5>
+        <button class="cancel-button" (click)="clear(i, message)"> OK </button>
       </div>
     </div>
 </div>

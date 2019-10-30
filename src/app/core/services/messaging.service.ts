@@ -18,7 +18,7 @@ export class MessagingService {
   constructor() { }
 
   add(message: Message) {
-    this.messages.push();
+    this.messages.push(message);
   }
 
   clear(message: Message) {
