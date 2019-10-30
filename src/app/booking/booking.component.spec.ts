@@ -10,6 +10,8 @@ import { Location } from '@angular/common';
 
 import { routes } from '../app-routing.module';
 import { Router } from '@angular/router';
+import { ItineraryDetailComponent } from '../itinerary/itinerary-detail/itinerary-detail.component';
+import { TripSegmentComponent } from '../trip-segment/trip-segment.component';
 
 describe('BookingComponent', () => {
   let component: BookingComponent;
@@ -20,7 +22,7 @@ describe('BookingComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, RouterTestingModule.withRoutes(routes)],
-      declarations: [ BookingComponent, HomepageComponent, ItineraryComponent ]
+      declarations: [ BookingComponent, HomepageComponent, ItineraryComponent, ItineraryDetailComponent, TripSegmentComponent ]
     })
     .compileComponents();
   }));
