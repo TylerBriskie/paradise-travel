@@ -13,6 +13,11 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('travel-agency-frontend app is running!');
   });
 
+  it('get Home Button Text ', () => {
+    page.navigateTo();
+    expect(page.getHomeButtonText()).toEqual('Home');
+
+  });
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);

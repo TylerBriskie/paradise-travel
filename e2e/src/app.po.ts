@@ -8,4 +8,8 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
+  getHomeButtonText(){
+    return element(by.css('#Main-Nav a:nth-child(1)')).getText();
+  }
 }
