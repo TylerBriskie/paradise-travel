@@ -1,6 +1,15 @@
 <div id="Itinerary-Detail-Component">
     <h1>Trip Itinerary</h1>
-    <h4>Flight: <span>{{itinerary.flightId}}</span></h4> 
-    <h4>Car: <span>{{itinerary.carId}}</span></h4>
-    <h4>Hotel: <span>{{itinerary.hotelId}}</span></h4>
+    <div class="itinerary-detail-section">
+      <img src="../../../assets/flight.svg" alt="flight icon">
+      <h4>Flight: <span>{{itinerary.flightId}}</span></h4>
+    </div>
+    <div class="itinerary-detail-section">
+      <img src="../../../assets/car.png" alt="car icon">
+      <h4>Car: <span>{{itinerary.carId}}</span></h4>
+    </div>
+    <div>
+      <img src="../../../assets/lodging.png" alt="hotel icon">
+      <h4>Hotel: <span>{{itinerary.hotelId}}</span></h4>
+    </div>
 </div>

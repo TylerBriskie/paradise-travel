@@ -14,10 +14,14 @@
             color: black;
             background-color: white;
           }
+        .select-trip-type:hover{
+          background-color: #EEFFEE;
+        }
           .select-trip-type.selected {
             background-color: #333;
             color: white;
           }
+
     }
     .trip-list-item{
         display: flex;
@@ -36,7 +40,7 @@
                 margin-bottom: .75em;
             }
         }
-        
+
         .success-box {
             width:2em;
             height: 100%;
@@ -49,4 +53,7 @@
         }
 
     }
+  .trip-list-item:hover{
+    background-color: #EEFFEE;
+  }
 }
