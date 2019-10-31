@@ -1,5 +1,9 @@
 #Itinerary-Detail-Component {
   .itinerary-detail-section {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
     outline: solid grey 2px;
     padding: 2em;
     width: 100%;
@@ -7,6 +11,7 @@
     img {
       height: 75px;
       width: 75px;
+      margin-right: 2em;
     }
   }
 }

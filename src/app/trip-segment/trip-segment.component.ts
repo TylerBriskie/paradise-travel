@@ -8,6 +8,8 @@ import { Location } from '@angular/common';
 })
 export class TripSegmentComponent implements OnInit {
   type: string;
+  id: string;
+
 
   constructor(private location: Location) { }
 
@@ -19,6 +21,7 @@ export class TripSegmentComponent implements OnInit {
     } else if (this.location.path().includes('car')){
       this.type = "Car";
     }
+    this.id = this.location.path().split('/').pop();
   }
 
 
