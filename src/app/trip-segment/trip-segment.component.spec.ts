@@ -26,6 +26,8 @@ describe('TripSegmentComponent', () => {
   }));
 
   beforeEach(() => {
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
     fixture = TestBed.createComponent(TripSegmentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -33,5 +35,10 @@ describe('TripSegmentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the correct type of trip segment based on URL', () => {
+    location.go('/itinerary/hotel/22');
+    expect(component.type).toBe('Hotel');
   });
 });
