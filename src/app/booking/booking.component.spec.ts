@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { RatingModule } from 'ng-starrating';
+
 
 import { BookingComponent } from './booking.component';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +21,7 @@ describe('BookingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, RouterTestingModule.withRoutes(routes)],
+      imports: [FormsModule, RouterTestingModule.withRoutes(routes), RatingModule],
       declarations: [ BookingComponent, HomepageComponent, ItineraryComponent, ItineraryDetailComponent, TripSegmentComponent ]
     })
     .compileComponents();
@@ -34,10 +36,14 @@ describe('BookingComponent', () => {
     fixture.detectChanges();
 
     component.currentBooking = {
+      destination: 'Tokyo',
       car: false,
-      hotel: false,
+      carType: 'Economy',
       flight: false,
-    }
+      flightTime: '7:00 A.M.',
+      hotel: false,
+      hotelRating: 0,
+    };
   });
 
   it('should create', () => {

@@ -1,8 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import { FormsModule } from "@angular/forms";
+import { RatingModule } from "ng-starrating";
 
 import { ItineraryDetailComponent } from './itinerary-detail.component';
-import {RouterTestingModule} from '@angular/router/testing';
 import {routes} from '../../app-routing.module';
+
 import {HomepageComponent} from '../../homepage/homepage.component';
 import {ItineraryComponent} from '../itinerary.component';
 import {BookingComponent} from '../../booking/booking.component';
@@ -14,7 +17,7 @@ describe('ItineraryDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes)],
+      imports: [RouterTestingModule.withRoutes(routes), FormsModule, RatingModule],
       declarations: [ HomepageComponent, ItineraryComponent, BookingComponent, TripSegmentComponent, ItineraryDetailComponent ]
     })
     .compileComponents();

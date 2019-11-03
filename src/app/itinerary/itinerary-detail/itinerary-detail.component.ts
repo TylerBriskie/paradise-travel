@@ -13,7 +13,7 @@ export class ItineraryDetailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.tripService.getTripDetail("101018").subscribe((itinerary) => {
+    this.tripService.getTripDetail('101018').subscribe((itinerary) => {
       this.itinerary = itinerary;
     });
   }

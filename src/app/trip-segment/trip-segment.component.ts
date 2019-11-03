@@ -8,20 +8,20 @@ import { Location } from '@angular/common';
 })
 export class TripSegmentComponent implements OnInit {
   type: string;
-  id: string;
+  fid: string;
 
 
   constructor(private location: Location) { }
 
   ngOnInit() {
-    if (this.location.path().includes('hotel')){
-      this.type = "Hotel";
-    } else if (this.location.path().includes('flight')){
-      this.type = "Flight";
-    } else if (this.location.path().includes('car')){
-      this.type = "Car";
+    if (this.location.path().includes('hotel')) {
+      this.type = 'Hotel';
+    } else if (this.location.path().includes('flight')) {
+      this.type = 'Flight';
+    } else if (this.location.path().includes('car')) {
+      this.type = 'Car';
     }
-    this.id = this.location.path().split('/').pop();
+    this.fid = this.location.path().split('/').pop();
   }
 
 

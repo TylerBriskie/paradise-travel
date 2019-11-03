@@ -18,13 +18,21 @@ export class BookingComponent implements OnInit {
   ];
   cities = ['Denver', 'Dallas', 'San Francisco', 'New York City', 'London', 'Rome', 'Paris', 'Tokyo'];
   currentBooking: {
+    destination: string,
     car: boolean,
+    carType: string,
     flight: boolean,
+    flightTime: string,
     hotel: boolean,
+    hotelRating: number,
   } = {
+    destination: 'Tokyo',
     car: false,
+    carType: 'Economy',
     flight: false,
-    hotel: false
+    flightTime: '7:00 A.M.',
+    hotel: false,
+    hotelRating: 0,
   };
 
   constructor(
@@ -35,12 +43,12 @@ export class BookingComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleCar(){
+  toggleCar() {
       this.currentBooking.car = !this.currentBooking.car;
       this.checkEnableSubmit();
   }
 
-  toggleFlight(){
+  toggleFlight() {
     this.currentBooking.flight = !this.currentBooking.flight;
     this.checkEnableSubmit();
   }
@@ -48,6 +56,12 @@ export class BookingComponent implements OnInit {
   toggleHotel() {
     this.currentBooking.hotel = !this.currentBooking.hotel;
     this.checkEnableSubmit();
+  }
+
+  checkHotelRating(event) {
+    console.log('event: ', event);
+    this.currentBooking.hotelRating = event.newValue;
+    console.log(this.currentBooking);
   }
 
   checkEnableSubmit() {

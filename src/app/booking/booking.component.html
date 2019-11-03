@@ -1,5 +1,9 @@
 <h1>Book A Trip</h1>
 <h3>Select Options</h3>
+<label for="select-destination">Destination City</label>
+<select [(ngModel)] = "currentBooking.destination" name="select-destination" id="select-destination">
+  <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+</select>
 <ul id="Trip-Type-Selector" class="row">
   <li (click)="toggleCar()" class="select-trip-type" [class.selected]="currentBooking.car === true">
     Car
@@ -17,19 +21,19 @@
 <form id="New-Booking-Form">
     <div *ngIf="currentBooking.car === true" class="form-selection-indicator">
       <img src="../../assets/car.png" alt="">
-      <select name="select-car-type" id="select-car-type">
-        <option *ngFor="let carType of carTypes" value="{{carType}}">{{carType}}</option>
+      <select [(ngModel)] = "currentBooking.carType" name="select-car-type" id="select-car-type">
+        <option *ngFor="let carType of carTypes" [value]="carType">{{carType}}</option>
       </select>
     </div>
 
     <div *ngIf="currentBooking.hotel === true" class="form-selection-indicator">
       <img src="../../assets/lodging.png" alt="">
-      <p>HOTEL ADDED</p>
+      <star-rating value="0" checkedcolor="gold" uncheckedcolor="black" size="24px"    readonly="false" (rate)="checkHotelRating($event)"></star-rating>
     </div>
 
     <div *ngIf="currentBooking.flight === true" class="form-selection-indicator">
         <img src="../../assets/flight.svg" alt="">
-      <select name="select-flight-time" id="select-flight-time">
+      <select [(ngModel)]="currentBooking.flightTime" name="select-flight-time" id="select-flight-time">
         <option *ngFor="let time of flightTimes" value="{{time}}">{{time}}</option>
       </select>    </div>
 
