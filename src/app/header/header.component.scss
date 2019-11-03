@@ -16,7 +16,7 @@
       height: 80px;
     }
   }
-  
+
   ul {
     display: flex;
     flex-direction: row;
@@ -26,6 +26,9 @@
       list-style: none;
       padding: 1em 2em;
       margin: 0 1em;
+    }
+    li:focus {
+      border: none;
     }
   }
 }

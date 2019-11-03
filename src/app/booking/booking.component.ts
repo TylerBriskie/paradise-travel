@@ -3,7 +3,7 @@ import '../../assets/selected.png';
 import { MessagingService } from '../core/services/messaging.service';
 import { Router } from '@angular/router';
 import { TripService } from '../core/services/trip.service';
-
+import { CarTypes} from '../core/mockData/CarTypes';
 
 @Component({
   selector: 'app-booking',
@@ -11,7 +11,12 @@ import { TripService } from '../core/services/trip.service';
   styleUrls: ['./booking.component.scss']
 })
 export class BookingComponent implements OnInit {
-  canSubmit: boolean = false;
+  canSubmit = false;
+  carTypes = Object.keys(CarTypes).map(key => CarTypes[key]).filter(value => typeof value === 'string');
+  flightTimes: string[] = [
+    '7:00 A.M.', '10:00 A.M.', '12:30 P.M.', '3:00 P.M', '6:30 P.M.', '10:00 P.M',
+  ];
+  cities = ['Denver', 'Dallas', 'San Francisco', 'New York City', 'London', 'Rome', 'Paris', 'Tokyo'];
   currentBooking: {
     car: boolean,
     flight: boolean,
@@ -23,7 +28,7 @@ export class BookingComponent implements OnInit {
   };
 
   constructor(
-    private messagingService: MessagingService, 
+    private messagingService: MessagingService,
     private tripService: TripService,
     private router: Router) { }
 
@@ -61,6 +66,6 @@ export class BookingComponent implements OnInit {
     }, (error) =>{
       this.messagingService.add({status: 'Warning', text: 'There was an error booking your trip.'})
     });
-    
+
   }
 }
