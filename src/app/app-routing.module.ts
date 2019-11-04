@@ -11,9 +11,9 @@ export const routes: Routes = [
   { path: 'book', component: BookingComponent },
   { path: 'itinerary', component: ItineraryComponent},
   { path: 'itinerary/:id', component: ItineraryDetailComponent },
-  { path: 'itinerary/flight/:id', component: TripSegmentComponent},
-  { path: 'itinerary/hotel/:id', component: TripSegmentComponent},
-  { path: 'itinerary/car/:id', component: TripSegmentComponent},
+  { path: 'itinerary/flight/:id', component: TripSegmentComponent, data: {type: 'flight'}},
+  { path: 'itinerary/hotel/:id', component: TripSegmentComponent, data: {type: 'hotel'}},
+  { path: 'itinerary/car/:id', component: TripSegmentComponent, data: {type: 'car'}},
 
 ];
 

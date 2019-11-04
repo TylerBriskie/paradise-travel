@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormsModule} from '@angular/forms';
@@ -31,18 +31,12 @@ describe('TripSegmentComponent', () => {
     router = TestBed.get(Router);
     location = TestBed.get(Location);
     fixture = TestBed.createComponent(TripSegmentComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
+    component = fixture.componentInstance;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should render the correct type of trip segment based on URL', () => {
-  //   router.navigate(['/itinerary/hotel/22']);
-  //   fixture.detectChanges();
-  //   console.log(component);
-  //   expect(component.type).toBe('Hotel');
-  // });
 });

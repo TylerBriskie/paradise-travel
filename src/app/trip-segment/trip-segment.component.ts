@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -8,20 +9,16 @@ import { Location } from '@angular/common';
 })
 export class TripSegmentComponent implements OnInit {
   type: string;
-  fid: string;
+  id: string;
 
-
-  constructor(private location: Location) { }
+  constructor(
+    private location: Location,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
-    if (this.location.path().includes('hotel')) {
-      this.type = 'Hotel';
-    } else if (this.location.path().includes('flight')) {
-      this.type = 'Flight';
-    } else if (this.location.path().includes('car')) {
-      this.type = 'Car';
-    }
-    this.fid = this.location.path().split('/').pop();
+    this.id = this.route.snapshot.params.id;
+    this.type = this.route.snapshot.data.type;
   }
 
 

@@ -13,7 +13,6 @@ import {FormsModule} from '@angular/forms';
 import {routes} from './app-routing.module';
 
 describe('Router App', () => {
-  let component;
   let fixture;
   let router: Router;
   let location: Location;
