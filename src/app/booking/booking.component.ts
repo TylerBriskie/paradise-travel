@@ -59,26 +59,24 @@ export class BookingComponent implements OnInit {
   }
 
   checkHotelRating(event) {
-    console.log('event: ', event);
     this.currentBooking.hotelRating = event.newValue;
-    console.log(this.currentBooking);
   }
 
   checkEnableSubmit() {
-    if (this.currentBooking.car === true && this.currentBooking.flight === true && this.currentBooking.hotel === true){
+    if (this.currentBooking.car === true || this.currentBooking.flight === true || this.currentBooking.hotel === true) {
       this.canSubmit = true;
     } else {
       this.canSubmit = false;
     }
   }
 
-  submitBooking(){
+  submitBooking() {
     this.tripService.newTrip(this.currentBooking).subscribe((newTrip) => {
       this.messagingService.add({status: 'OK', text: 'Your trip was booked'});
       this.router.navigate([`/itinerary/${newTrip.id}`]);
 
-    }, (error) =>{
-      this.messagingService.add({status: 'Warning', text: 'There was an error booking your trip.'})
+    }, (error) => {
+      this.messagingService.add({status: 'Warning', text: 'There was an error booking your trip.'});
     });
 
   }
