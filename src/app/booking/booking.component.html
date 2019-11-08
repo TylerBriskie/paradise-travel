@@ -29,18 +29,17 @@
 
     <div *ngIf="currentBooking.hotel === true" class="form-selection-indicator">
       <img src="../../assets/lodging.png" alt="">
-        <h5>Select Star Rating</h5>
+      <h5>Select Star Rating</h5>
       <star-rating value="1" checkedcolor="gold" uncheckedcolor="black" size="24px"    readonly="false" (rate)="checkHotelRating($event)"></star-rating>
     </div>
 
     <div *ngIf="currentBooking.flight === true" class="form-selection-indicator">
-        <img src="../../assets/flight.svg" alt="">
+      <img src="../../assets/flight.svg" alt="">
       <h5>Select Flight Time</h5>
-
       <select [(ngModel)]="currentBooking.flightTime" name="select-flight-time" id="select-flight-time">
         <option *ngFor="let time of flightTimes" value="{{time}}">{{time}}</option>
-      </select>    </div>
-
+      </select>
+    </div>
 </form>
 
 <div class="button-group">

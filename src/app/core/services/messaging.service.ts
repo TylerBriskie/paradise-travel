@@ -5,7 +5,6 @@ import { Message } from '../models/Message';
   providedIn: 'root'
 })
 export class MessagingService {
-
   messages: Message[] = [];
 
   constructor() { }
